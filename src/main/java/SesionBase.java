@@ -66,7 +66,7 @@ public class SesionBase implements SesionService, SesionIntDec{
     }
 
     @Override
-    public void ejecutar(Contenido c, boolean g){
+    public void ejecutar(Contenido c, Usuario usuario){
         System.out.println("reproduciendo contenido");
     }
 

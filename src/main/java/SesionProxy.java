@@ -5,21 +5,23 @@ public class SesionProxy implements SesionService {
         this.c=c;
     }
 
-    public boolean validarUsuario(boolean grat) {
-        if (grat && c.getEstado() == EstadoContenido.DISPONIBLE) {
-            System.out.println("puede ver el contenido");
+    public boolean validarUsuario(Usuario usuario) {
+        if (usuario.isGratuito() && c.getEstado() == EstadoContenido.DISPONIBLE) {
+            System.out.println("Puede ver el contenido con anuncios pobreton");
             return true;
-        } else {
-            System.out.println("no puede ver el contenido, solo aplica para premium");
-        }return false;
+        } else if(!usuario.isGratuito() && c.getEstado() == EstadoContenido.DISPONIBLE) {
+            System.out.println("Puede ver el contenido sin anuncios. <3");
+            return true;
+        }
+        return false;
     }
     public void cargarContenido () {
         System.out.println("puede cargar contenido");
     }
 
     @Override
-    public void ejecutar (Contenido c, boolean gra) {
-        if(!validarUsuario(gra)){
+    public void ejecutar (Contenido c, Usuario usuario) {
+        if(!validarUsuario(usuario)){
             return;
         }
         System.out.println("puede cargar contenido");
