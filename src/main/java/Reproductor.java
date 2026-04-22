@@ -1,8 +1,11 @@
 public class Reproductor {
-    private Reproductor instancia;
+    private static Reproductor instancia;
     private Usuario usuario;
 
-    private Reproductor getInstancia() {
+    private Reproductor() {
+    }
+
+    public static Reproductor getInstancia() {
         if(instancia == null) {
             instancia = new Reproductor();
         }
