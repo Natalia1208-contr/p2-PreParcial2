@@ -34,4 +34,7 @@ public class PlayList implements ComponentePlayList{
         }
         return resultado;
     }
+    public void agregarContenido(ComponentePlayList contenido) {
+        this.contenidos.add(contenido);
+    }
 }
