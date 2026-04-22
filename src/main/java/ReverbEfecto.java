@@ -1,5 +1,5 @@
 public class ReverbEfecto extends SesionDec{
-    public ReverbEfecto(SesionBase sesionb) {
+    public ReverbEfecto(SesionIntDec sesionb) {
         super(sesionb);
     }
 

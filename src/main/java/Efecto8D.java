@@ -1,5 +1,5 @@
 public class Efecto8D extends SesionDec{
-    public Efecto8D(SesionBase sesionb) {
+    public Efecto8D(SesionIntDec sesionb) {
         super(sesionb);
     }
 

@@ -1,8 +1,8 @@
 public abstract class SesionDec implements SesionIntDec{
-    protected SesionBase sesionb;
+    protected SesionIntDec sesionb;
 
     public SesionDec(SesionIntDec sesionb) {
-        this.sesionb = (SesionBase) sesionb;
+        this.sesionb =  sesionb;
     }
 
     @Override

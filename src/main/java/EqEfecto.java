@@ -1,5 +1,5 @@
 public class EqEfecto extends SesionDec{
-    public EqEfecto(SesionBase sesionb) {
+    public EqEfecto(SesionIntDec sesionb) {
         super(sesionb);
     }
 
