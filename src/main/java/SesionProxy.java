@@ -7,7 +7,7 @@ public class SesionProxy implements SesionService {
 
     public boolean validarUsuario(Usuario usuario) {
         if (usuario.isGratuito() && c.getEstado() == EstadoContenido.DISPONIBLE) {
-            System.out.println("Puede ver el contenido con anuncios pobreton");
+            System.out.println("Puede ver el contenido con anuncios");
             return true;
         } else if(!usuario.isGratuito() && c.getEstado() == EstadoContenido.DISPONIBLE) {
             System.out.println("Puede ver el contenido sin anuncios. <3");
@@ -20,11 +20,12 @@ public class SesionProxy implements SesionService {
     }
 
     @Override
-    public void ejecutar (Contenido c, Usuario usuario) {
+    public boolean ejecutar (Contenido c, Usuario usuario) {
         if(!validarUsuario(usuario)){
-            return;
+            return false;
         }
         System.out.println("puede cargar contenido");
+        return true;
     }
 }
 
