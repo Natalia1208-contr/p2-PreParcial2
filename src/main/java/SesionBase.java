@@ -1,19 +1,20 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class SesionBase implements SesionService, SesionIntDec{
     private String codigo;
     private String fecha;
     private String hora;
-    private List<Contenido> contenidos;
+    private List<ComponentePlayList> contenidos;
     private int duracion;
     private String dispositivo;
 
-    public SesionBase(String codigo, String fecha, String hora, List<Contenido> contenidos, int duracion, String dispositivo) {
+    public SesionBase(String codigo, String fecha, String hora, String dispositivo) {
         this.codigo = codigo;
         this.fecha = fecha;
         this.hora = hora;
-        this.contenidos = contenidos;
-        this.duracion = duracion;
+        this.contenidos = new ArrayList<>();
+        this.duracion = 0;
         this.dispositivo = dispositivo;
     }
 
@@ -41,11 +42,11 @@ public class SesionBase implements SesionService, SesionIntDec{
         this.hora = hora;
     }
 
-    public List<Contenido> getContenidos() {
+    public List<ComponentePlayList> getContenidos() {
         return contenidos;
     }
 
-    public void setContenidos(List<Contenido> contenidos) {
+    public void setContenidos(List<ComponentePlayList> contenidos) {
         this.contenidos = contenidos;
     }
 
@@ -63,6 +64,14 @@ public class SesionBase implements SesionService, SesionIntDec{
 
     public void setDispositivo(String dispositivo) {
         this.dispositivo = dispositivo;
+    }
+
+    public int duracionSesion (){
+        int duracion=0;
+        for(ComponentePlayList c:contenidos){
+            duracion+=c.duracionTotal();
+        }
+        return duracion;
     }
 
     @Override
