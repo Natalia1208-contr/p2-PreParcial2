@@ -5,6 +5,6 @@ public class EqEfecto extends SesionDec{
 
     @Override
     public String verEfectos() {
-        return getSesionb().toString()+"+ efecto ecualizador";
+        return sesionb.verEfectos()+"\n\t Efecto Equalizador ";
     }
 }

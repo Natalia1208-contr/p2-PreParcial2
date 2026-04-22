@@ -5,6 +5,6 @@ public class Efecto8D extends SesionDec{
 
     @Override
     public String verEfectos() {
-        return getSesionb().toString()+"+ efecto 8D";
+        return sesionb.verEfectos()+"\n\t Efecto 8D";
     }
 }

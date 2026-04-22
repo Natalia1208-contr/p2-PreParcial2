@@ -5,6 +5,6 @@ public class ReverbEfecto extends SesionDec{
 
     @Override
     public String verEfectos() {
-        return getSesionb().toString()+"+ efecto reversa";
+        return sesionb.verEfectos()+"\n\t Efecto 8D";
     }
 }
